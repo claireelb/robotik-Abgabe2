@@ -34,3 +34,8 @@ eig(M)
 fprintf("dynamics_iiwa_5:")
 [M, C, g, H, Jg, dJg] = dynamics_iiwa_5(q,dq);
 eig(M)
+
+
+%% Result Aufgabe 2.1
+
+%% Aufgabe 2.2 
