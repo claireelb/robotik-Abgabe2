@@ -55,21 +55,22 @@ fall = 2;
 
 versatz = 0.1;
 
-q0 = [0 1/2 0 1/2 0 1/2 0]'; %%% place your initial value here !!!!!!!!!!!!!!!!!!
-q0_d = [0 1/2+versatz 0 1/2+versatz 0 1/2-versatz 0]'; %%% place your initial value here !!!!!!!!!!!!!!!!!!
+q0 = [0 pi/4 0 -pi/2 0 pi/4 0]'; %%% place your initial value here !!!!!!!!!!!!!!!!!!
 dq0 = zeros(7,1); %%% place your initial value here !!!!!!!!!!!!!!!!!!!!!!!
 
-F_ext = [1;0.1;0.1;0;0;0];
+F_ext = [1;0;0.13;0;0;0];
 
 % Parameter für Gewichts, Dämpfung und Steifigkeitsmatrix
-l = 10;
-d = 1e6;
-k = 1e6;
+l = 3;
+d = .1;
+k = 10;
 
 
-[~, ~, ~, H, ~, ~] = dynamics_iiwa(q0_d,dq0);
+[~, ~, ~, H, ~, ~] = dynamics_iiwa(q0,dq0);
 xd = x_RPY_fromH(H);
 % xd = [xd(1) xd(2) xd(3) 0 0 0]';
 x_T = [0.5 0.5 0.5 0 0 0]';
+% x_T = xd + [0 0 0.1 0 0 0]';
 % dxd = zeros(size(xd));
 % ddxd = dxd;
+sim("ImpedanceController_iiwa.slx")
