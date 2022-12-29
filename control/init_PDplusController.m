@@ -48,11 +48,11 @@ fall= 2;
 q0 = [0 pi/4 0 -pi/2 0 pi/4 0]';
 dq0 = zeros(7,1); %%% place your initial value here !!!!!!!!!!!!!!!!!!!!!!!
 
-F_ext = [-10;0;0;0;0;0];
+F_ext = [-1;0;0;0;0;0];
 
 % Parameter für Gewichts, Dämpfung und Steifigkeitsmatrix
 % l = 1;
-d = 1;
+d = 10;
 k = 10;
 
 
