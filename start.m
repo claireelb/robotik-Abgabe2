@@ -38,4 +38,3 @@ eig(M<)
 
 %% Result Aufgabe 2.1
 
-%% Aufgabe 2.2 
