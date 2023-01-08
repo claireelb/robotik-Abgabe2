@@ -21,9 +21,12 @@ Qualitativ identisch mit Verlauf 1.
 ## Aufgabe 2.4 
 ###### files: control/init_ComputedTorque.m
 
+Wie viele Trajektorien? Reicht eine? Welche Fälle sollen abgedeckt werden?
+
 ## Aufgabe 2.5 
-###### files: control/
+###### files: control/init_ImpedanceController.m
+
 ## Aufgabe 2.6 
-###### files: control/
+###### files: control/init_PDplusController.m
 
 
