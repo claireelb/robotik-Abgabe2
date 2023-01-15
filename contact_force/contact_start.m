@@ -19,8 +19,8 @@ for i =  1:length(q_Force)
     dq = dq_Force(1:7,i);
     tau = tau_Force(1:7,i);
    
-    [M_i, C_i, g_i, H_i, Jg_i, dJg_i] = dynamics_iiwa(q_Force(1:7,i),dq_Force(1:7,i));
-    A= Jg_i(3,:);
+    [M_i, C_i, g_i, ~, Jg_i, dJg_i] = dynamics_iiwa(q_Force(1:7,i),dq_Force(1:7,i));
+    A= Jg_i(3,:); 
     dA = dJg_i(3,:);
     %lambda_i(i) = inv(A*inv(M_i)*A')*(A*inv(M_i)*(-tau + (C_i*dq+g_i) ) - dA*dq); % 6.57
     lambda_i(i) = (A*(M_i\(A')))\(A*(M_i\(-tau + (C_i*dq+g_i))) - dA*dq); % 6.57

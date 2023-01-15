@@ -21,19 +21,21 @@ dq = zeros(1,7);
 
 fprintf("dynamics_iiwa_1:")
 [M, C, g, H, Jg, dJg] = dynamics_iiwa_1(q,dq);
-eig(M)
+%Erfüllt Passivität nicht siehe 2.1-passivität.png
 fprintf("dynamics_iiwa_2:")
-[M, C, g, H, Jg, dJg] = dynamics_iiwa_2(q,dq); % g passt nicht 
-
+[M, C, g, H, Jg, dJg] = dynamics_iiwa_2(q,dq); % g terme zu groß 
+g
 fprintf("dynamics_iiwa_3:")
 [M, C, g, H, Jg, dJg] = dynamics_iiwa_3(q,dq); 
-eig(M); %Ein  Eigenwert von M ist negativ
+eig(M) %Ein  Eigenwert von M ist negativ
 fprintf("dynamics_iiwa_4:")
 [M, C, g, H, Jg, dJg] = dynamics_iiwa_4(q,dq);
-eig(M)
+disp("Gewählt");
+g
 fprintf("dynamics_iiwa_5:")
 [M, C, g, H, Jg, dJg] = dynamics_iiwa_5(q,dq);
-eig(M<)
+M %M(7,7) < 0.1 laut Angabe >=0.1
+Jg
 
 
 %% Result Aufgabe 2.1
