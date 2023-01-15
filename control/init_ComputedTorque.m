@@ -26,10 +26,8 @@ dqd_0 = zeros(7,1);
 % dq0 = [0; pi/4; 0; -pi/2; 0; pi/4;0];
 
 
-
-
 %% Plots erstellen 
-for fall = 1:2
+for fall = 1:3
     for kk = [0.1,1,10,100]
         if fall == 1
             % Erwartungswert ist Position
@@ -41,7 +39,11 @@ for fall = 1:2
             % Erwartungswert ist nicht Position 
             q0 = [0; pi/4+0.5; 0; -pi/2; 0; pi/4+2;0]; 
             dq0 = dqd_0;
-            
+
+        elseif fall == 3 
+            % Erwartungswert ist nicht Position und Geschwindigkeit != 0
+            q0 = [0; pi/4+0.5; 0; -pi/2; 0; pi/4+2;0]; 
+            dq0 = ones(7,1)*pi/4;
         end
         
         k1 = kk ; 
@@ -117,5 +119,7 @@ for fall = 1:2
         saveas(j,pathplusname,'png');
     end
 end
+
+
 %% close all figures
 % close all;
