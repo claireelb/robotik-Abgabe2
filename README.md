@@ -30,7 +30,6 @@ M(7,7) < 0.1 laut Angabe >=0.1
 
 
  z(q)-0.2 = 0
-- [] Formel raussuchen 
  df(q)/dq = J_a % Aber wir betrachten nur z Achse => J_g auch ok
  A= Jg(3,:)
  dA = dJg(3,:) % zeitlich Ableitung von Jg = zeitliche Ableitung von A
@@ -100,7 +99,7 @@ Startkonfiguration:  q0 = [0 pi/4 0 -pi/2 0 pi/4 0]'
 Reglerparameter: 
 - Dämpfungskonstante sollte allg. größer 0 (Pos. def.) aber bei uns >=89 sein. 
 - Steifigkeitskonstante > 
-- $l=3$ für alle Argumentationen
+- $l=1$ für alle Argumentationen
 - $d=k=10$ für alle Argumentationen
 
 
@@ -115,4 +114,17 @@ Reglerparameter:
 ## Aufgabe 2.6 
 ###### files: control/init_PDplusController.m
 
+Startkonfiguration:  q0 = [0 pi/4 0 -pi/2 0 pi/4 0]'
 
+Reglerparameter: 
+- Dämpfungskonstante sollte allg. größer 0 (Pos. def.) aber bei uns >=89 sein. 
+- Steifigkeitskonstante > 
+- $l=1$ für alle Argumentationen
+- $d=k=10$ für alle Argumentationen
+
+|fall| findings|
+|---|---|
+|1.1| Nur numerische Fehler erkennbar in x und dx.|
+|1.2| Nach Ablauf der Regelzeit gibt es noch eine Differenz (mm-Bereich) zwischen Ist und Soll-Position|
+|2.1| Nach Ablauf der Regelzeit kommt es zu einer Differenz im µm-Bereich.$\Rightarrow$ Gelenke bewegen sich minimal. Gelenkmomente bleiben konstant.|
+|2.2| Abweichung wegen Störkraft anschließend wie Fall 1.2|

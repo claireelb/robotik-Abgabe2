@@ -53,7 +53,7 @@ for fall = 1:3
         
         % Plot q
         
-        h =figure();
+        h = figure();
         h.Position(3:4) = [1280/2 720/2];
         
         pathplusname = "../report/2.4-diffq-k1-"+num2str(k1)+"k2-"+num2str(k2)+"fall"+num2str(fall)+".png";

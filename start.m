@@ -1,5 +1,4 @@
 clear
-cd ~/Documents/MATLAB
 %% Get Current Working Directory 
 filePath = matlab.desktop.editor.getActiveFilename;
 fprintf('%s\n',filePath);
